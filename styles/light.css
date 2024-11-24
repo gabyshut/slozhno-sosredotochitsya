@@ -37,9 +37,8 @@
 }
 
 .theme_light .header__theme-menu-button:hover {
-  outline: 1px solid rgb(53 52 48 / 0.4); /*fallback*/
-  outline: 1px solid
-    color-mix(in srgb, var(--additional-color, #353430) 40%, transparent 60%);
+  /*outline: 1px solid rgb(53 52 48 / 0.4); /*fallback, но github тесты его не пропускают.*/
+  outline: 1px solid color-mix(in srgb, var(--additional-color, #353430) 40%, transparent 60%);
 }
 
 .theme_light .header__theme-menu-button:focus-visible {
@@ -95,9 +94,8 @@
   }
 
   .theme_auto .header__theme-menu-button:hover {
-    outline: 1px solid rgb(53 52 48 / 0.4); /*fallback*/
-    outline: 1px solid
-      color-mix(in srgb, var(--additional-color, #353430) 40%, transparent 60%);
+    /*outline: 1px solid rgb(53 52 48 / 0.4); /*fallback, но github тесты его не пропускают.*/
+    outline: 1px solid color-mix(in srgb, var(--additional-color, #353430) 40%, transparent 60%);
   }
 
   .theme_auto .header__theme-menu-button:focus-visible {

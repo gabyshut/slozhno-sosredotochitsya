@@ -71,7 +71,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgb(255 0 112 / 0.4); /*fallback*/
+  /*outline: 1px solid rgb(255 0 112 / 0.4); /*fallback, но github тесты его не пропускают.*/
   outline: 1px solid color-mix(in srgb, var(--accent-color, #ff0070) 40%, transparent 60%);
 }
 

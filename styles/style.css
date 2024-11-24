@@ -3,8 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--main-color, #000028);
-  padding: var(--page-padding, 10px);
-  background-image: var(--bg-image, url('../images/cover-image-dark.png'));
+  background-image: var(--bg-image, url("../images/cover-image-dark.png"));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -15,9 +14,10 @@
   position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  block-size: calc(100dvb - (var(--page-padding, 10px) * 2));
+  padding: var(--page-padding, 10px);
+  block-size: 100dvb;
   align-items: center;
-  margin-block-end: var(--header-margin, 3.125rem);
+  margin-block-end: var(--header-margin, 2.5rem);
 }
 
 .decor-element {
@@ -25,12 +25,12 @@
   display: block;
   color: var(--accent-color, #ff0070);
   font-size: var(--text-size, 1.125rem);
-  right: 28px;
-  top: 2px;
+  right: calc(28px + var(--page-padding, 10px));
+  top: calc(2px + var(--page-padding, 10px));
 }
 
 .decor-element::after {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 9px;
   block-size: 9px;
@@ -86,7 +86,7 @@
 
 .main-title {
   font-size: var(--title-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
-  color: var(--title-color, #DB00FF);
+  color: var(--title-color, #db00ff);
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   line-height: var(--title-line-height, 0.825em);
 }
@@ -101,25 +101,29 @@
 }
 
 .decorated-zone::before {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  top: 0;
-  right: 0;
+  top: var(--page-padding, 10px);
+  right: var(--page-padding, 10px);
   border-block-start: 1px solid var(--accent-color, #ff0070);
   border-inline-end: 1px solid var(--accent-color, #ff0070);
 }
 
 .decorated-zone::after {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
   border-block-end: 1px solid var(--accent-color, #ff0070);
   border-inline-start: 1px solid var(--accent-color, #ff0070);
-  bottom: 0;
-  left: 0;
+  bottom: var(--page-padding, 10px);
+  left: var(--page-padding, 10px);
+}
+
+.main-content {
+  padding: 0 var(--page-padding, 10px);
 }
 
 .section {
@@ -141,7 +145,7 @@
 
 .section-content__paragraph {
   font-size: inherit;
-  color: var(--additional-color, #F1B2CE);
+  color: var(--additional-color, #f1b2ce);
   margin-block-start: 0.625rem;
   line-height: var(--text-line-height, 1.3em);
 }
@@ -152,11 +156,11 @@
 }
 
 .text-link:hover {
-  border-block-end: 1px solid var(--additional-color, #F1B2CE);
+  border-block-end: 1px solid var(--additional-color, #f1b2ce);
 }
 
 .text-link:focus-visible {
-  outline: 1px solid var(--additional-color, #F1B2CE);
+  outline: 1px solid var(--additional-color, #f1b2ce);
 }
 
 .section-content__subtitle {
@@ -171,6 +175,7 @@
   gap: 0.625rem;
   line-height: var(--text-line-height, 1.3em);
   font-size: var(--text-size, 1.125rem);
+  margin-block-end: calc(var(--section-margin) - var(--page-padding));
 }
 
 .section-gallery__image {
@@ -181,18 +186,18 @@
 }
 
 .footer {
-  block-size: calc(100dvb - (var(--page-padding, 10px) * 2));
+  block-size: 100dvb;
   position: relative;
   display: grid;
   align-items: center;
   justify-items: center;
+  padding: var(--page-padding);
 }
 
 @media (width >= 700px) {
-
   :root {
     --page-padding: 20px;
-    --header-margin: 5rem;
+    --header-margin: 3.75rem;
     --section-margin: 5rem;
     --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
@@ -218,7 +223,7 @@
   .section {
     grid-template-columns: 1fr 2fr;
   }
-  
+
   .section-content {
     grid-column: 2/-1;
   }
@@ -231,7 +236,7 @@
     grid-column: 2/-1;
     align-self: end;
   }
-  
+
   .title-span {
     grid-row: span 2;
   }
@@ -281,5 +286,4 @@
   .header__theme-menu-list {
     flex-direction: row;
   }
-
 }

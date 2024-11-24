@@ -4,9 +4,9 @@
 */
 :root {
   --main-color: #000028;
-  --additional-color: #F1B2CE;
+  --additional-color: #f1b2ce;
   --accent-color: #ff0070;
-  --title-color: #DB00FF;
+  --title-color: #db00ff;
   --page-padding: 10px;
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --text-size: 1.125rem;
@@ -14,7 +14,7 @@
   --bold-text: 700;
   --regular-text: 400;
   --title-line-height: 0.825em;
-  --bg-image: url('../images/cover-image-dark.png');
+  --bg-image: url("../images/cover-image-dark.png");
   --section-margin: 3.125rem;
-  --header-margin: 3.125rem;
+  --header-margin: 2.5rem;
 }
